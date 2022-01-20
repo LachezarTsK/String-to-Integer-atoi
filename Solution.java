@@ -16,13 +16,10 @@ public class Solution {
 
 class StateMachine {
 
-    enum State {
-        STAGE_WHITESPACE_PLUS_MINUS_DIGIT, STAGE_DIGIT, STAGE_END_SEARCH;
-    };
-
+    enum State {STAGE_WHITESPACE_PLUS_MINUS_DIGIT, STAGE_DIGIT, STAGE_END_SEARCH;};
+    State currentState = State.STAGE_WHITESPACE_PLUS_MINUS_DIGIT;
     int integer;
     boolean positive = true;
-    State currentState = State.STAGE_WHITESPACE_PLUS_MINUS_DIGIT;
 
     int getInteger() {
         return (positive || integer == Integer.MIN_VALUE) ? integer : -integer;
