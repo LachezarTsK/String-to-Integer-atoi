@@ -36,7 +36,8 @@ class StateMachine {
      */
     appendDigit(characterDigit) {
         let digit = characterDigit.codePointAt(0) - this.ascii_zero;
-        if (this.integer < Math.trunc(this.max_32bit_integer / 10) || (this.integer === Math.trunc(this.max_32bit_integer / 10) && digit <= this.max_32bit_integer % 10)) {
+        if (this.integer < Math.trunc(this.max_32bit_integer / 10) 
+            || (this.integer === Math.trunc(this.max_32bit_integer / 10) && digit <= this.max_32bit_integer % 10)) {
             this.integer = this.integer * 10 + digit;
         } else {
             this.integer = this.positive ? this.max_32bit_integer : this.min_32bit_integer;
